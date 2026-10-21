@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO:START — the builder rewrites title / description / keywords for search (see CLAUDE.md) -->
+  <title>Table to Markdown Converter – Excel, CSV &amp; HTML, Free &amp; Private</title>
+  <meta name="description" content="Convert tables from Excel, Google Sheets, CSV or web pages into clean, aligned Markdown tables. Free, private and offline: nothing leaves your browser.">
+  <meta name="keywords" content="table to markdown, excel to markdown table, csv to markdown, html table to markdown, markdown table generator, google sheets to markdown, markdown to csv, tsv to markdown">
+  <!-- SEO:END -->
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0f14" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://turhe123.github.io/table-to-markdown-local/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Table to Markdown Converter – Free, Private, In Your Browser">
+  <meta property="og:description" content="Paste a table from Excel, Sheets or CSV and get a clean Markdown table in your browser, nothing sent anywhere. Free and open source, nothing is uploaded, works ">
+  <meta property="og:url" content="https://turhe123.github.io/table-to-markdown-local/">
+  <meta property="og:image" content="https://turhe123.github.io/table-to-markdown-local/docs/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Table to Markdown Converter">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Table to Markdown Converter – Free, Private, In Your Browser">
+  <meta name="twitter:description" content="Paste a table from Excel, Sheets or CSV and get a clean Markdown table in your browser, nothing sent anywhere. Free and open source, nothing is uploaded, works ">
+  <meta name="twitter:image" content="https://turhe123.github.io/table-to-markdown-local/docs/og.png">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Table to Markdown Converter",
+    "alternateName": "Table to Markdown Converter – Free, Private, In Your Browser",
+    "description": "Paste a table from Excel, Sheets or CSV and get a clean Markdown table in your browser, nothing sent anywhere. Free and open source, nothing is uploaded, works ",
+    "url": "https://turhe123.github.io/table-to-markdown-local/",
+    "image": "https://turhe123.github.io/table-to-markdown-local/docs/og.png",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript. Works offline after the first visit.",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "license": "https://opensource.org/licenses/MIT",
+    "softwareVersion": "1.0.0",
+    "author": { "@type": "Person", "name": "Or Davidai Bachar", "url": "https://github.com/turhe123" },
+    "sameAs": ["https://github.com/turhe123/table-to-markdown-local"]
+  }
+  </script>
+  <script src="vendor/papaparse/papaparse.min.js" defer></script>
+  <!-- Page views are counted with GoatCounter: no cookies, no personal data, open source. -->
+  <script data-goatcounter="https://turhe123.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#tool">Skip to the tool</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./" aria-label="Table to Markdown Converter home">
+        <img class="brand__icon" src="icon.svg" alt="" width="28" height="28">
+        <span class="brand__name">Table to Markdown Converter</span>
+      </a>
+      <nav class="site-nav" aria-label="Page">
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://github.com/turhe123/table-to-markdown-local" rel="noopener">GitHub</a>
+        <a href="https://turhe123.github.io/web-tools/" rel="noopener" class="site-nav__more">More tools</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container">
+      <!-- HERO:START — the builder may refine the headline and promise; keep the trust badges -->
+      <h1 class="hero__title">Table to Markdown Converter</h1>
+      <p class="hero__lead">Paste a table from Excel, Sheets or CSV and get a clean Markdown table in your browser, nothing sent anywhere.</p>
+      <!-- HERO:END -->
+      <ul class="badges" aria-label="Why this tool is safe to use">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Runs in your browser, files never leave your device</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Free, open source, no account, no ads</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Works offline after the first visit</li>
+      </ul>
+    </section>
+
+    <section class="container" id="tool" aria-labelledby="tool-title">
+      <div class="tool-card">
+        <!-- TOOL:START — the builder replaces everything between these markers with the real tool UI -->
+        <h2 id="tool-title" class="visually-hidden">Table to Markdown Converter</h2>
+        <div class="t2m-modes" role="group" aria-label="Conversion direction">
+          <button class="btn btn--small t2m-mode" id="mode-md" type="button" aria-pressed="true">Table → Markdown</button>
+          <button class="btn btn--small t2m-mode" id="mode-csv" type="button" aria-pressed="false">Markdown → CSV</button>
+        </div>
+        <div class="t2m-options" id="options" role="group" aria-label="Conversion options">
+          <div class="field t2m-field md-only">
+            <label for="format">Input format</label>
+            <select id="format">
+              <option value="auto" selected>Auto detect</option>
+              <option value="tsv">Tab separated (Excel, Sheets)</option>
+              <option value="csv">Comma separated (CSV)</option>
+              <option value="semicolon">Semicolon separated</option>
+              <option value="html">HTML table</option>
+              <option value="markdown">Markdown table (tidy up)</option>
+            </select>
+          </div>
+          <div class="field t2m-field md-only">
+            <label for="flavor">Output style</label>
+            <select id="flavor">
+              <option value="gfm" selected>GitHub flavoured</option>
+              <option value="plain">Plain (no outer pipes)</option>
+            </select>
+          </div>
+          <div class="t2m-checks">
+            <label class="check md-only"><input type="checkbox" id="opt-header" checked> First row is the header</label>
+            <label class="check md-only"><input type="checkbox" id="opt-pad" checked> Pretty padding</label>
+            <label class="check"><input type="checkbox" id="opt-trim" checked> Trim spaces</label>
+            <label class="check md-only"><input type="checkbox" id="opt-escape"> Escape <code>\ * _ `</code></label>
+          </div>
+        </div>
+        <div class="t2m-panes">
+          <div class="t2m-pane">
+            <div class="row row--between t2m-pane__head">
+              <label class="field__label" for="input" id="input-label">Your table</label>
+              <span class="row t2m-pane__actions">
+                <button class="t2m-link" id="load-sample" type="button">Load sample</button>
+                <button class="t2m-link" id="clear" type="button">Clear</button>
+              </span>
+            </div>
+            <textarea id="input" class="mono t2m-input" wrap="off" spellcheck="false" autocomplete="off" aria-describedby="input-hint"
+              placeholder="Paste straight from Excel or Google Sheets (select the cells, copy, paste here). CSV, TSV and tables copied from web pages work too."></textarea>
+            <p class="field__hint" id="input-hint">Tip: <kbd class="kbd">Ctrl</kbd> or <kbd class="kbd">⌘</kbd> + <kbd class="kbd">Enter</kbd> copies the result.</p>
+            <div class="dropzone dropzone--compact" id="dropzone" tabindex="0" role="button" aria-label="Open a CSV, TSV, HTML or Markdown file, or drop it here">
+              <label class="visually-hidden" for="file-input">Open a CSV, TSV, HTML or Markdown file</label>
+              <input class="dropzone__input" id="file-input" type="file" multiple accept=".csv,.tsv,.tab,.txt,.md,.markdown,.html,.htm,text/csv,text/tab-separated-values,text/plain,text/markdown,text/html" aria-describedby="dropzone-hint">
+              <p class="dropzone__title">Drop a CSV file here or <span class="link">open one</span></p>
+              <p class="dropzone__hint" id="dropzone-hint">Read on this device only. Nothing is uploaded.</p>
+            </div>
+          </div>
+          <div class="t2m-pane">
+            <div class="results" id="results" aria-live="polite"></div>
+            <div class="t2m-empty" id="empty">
+              <p><strong>Nothing to convert yet.</strong> Paste a table on the left, drop a CSV file, or <button class="t2m-link" id="load-sample-2" type="button">load the sample table</button>.</p>
+            </div>
+            <section class="t2m-out" id="output-card" aria-labelledby="output-label" hidden>
+              <div class="row row--between t2m-pane__head">
+                <label class="field__label" for="output" id="output-label">Markdown</label>
+                <span class="t2m-summary stat" id="summary"></span>
+              </div>
+              <textarea id="output" class="mono t2m-output" wrap="off" readonly spellcheck="false"></textarea>
+              <div class="row t2m-actions">
+                <button class="btn btn--primary" id="copy" type="button">Copy Markdown</button>
+                <button class="btn" id="download" type="button">Download table.md</button>
+              </div>
+              <h3 class="t2m-preview-title" id="preview-title">Preview</h3>
+              <p class="field__hint" id="preview-hint">Use the buttons under each column name to set its alignment. Auto puts numeric columns on the right.</p>
+              <div class="table-wrap t2m-preview-wrap">
+                <table class="t2m-preview" id="preview" aria-labelledby="preview-title"></table>
+              </div>
+            </section>
+          </div>
+        </div>
+        <!-- TOOL:END -->
+      </div>
+    </section>
+
+    <section class="container section" id="how" aria-labelledby="how-title">
+      <h2 id="how-title" class="section__title">How it works</h2>
+      <!-- HOW:START — three honest steps for this tool -->
+      <ol class="steps">
+        <li><strong>Paste or drop your table.</strong> Copy cells from Excel or Google Sheets, a CSV or TSV file, or a table on a web page, and paste it in the box. The format is detected for you.</li>
+        <li><strong>Tune the output.</strong> Set left, center or right alignment under each column in the preview, and choose header row, padding, trimming and escaping. The Markdown updates as you go.</li>
+        <li><strong>Copy or download.</strong> Press Copy Markdown (or Ctrl/⌘ + Enter) and paste it into a README, wiki or issue, or save it as table.md. Everything happens on your device.</li>
+      </ol>
+      <!-- HOW:END -->
+    </section>
+
+    <section class="container section" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="section__title">Questions, answered</h2>
+      <!-- FAQ:START — 4 to 6 questions; keep the privacy, offline and AI answers -->
+      <details class="faq" open>
+        <summary>Is my pasted data uploaded anywhere?</summary>
+        <p>No. Table to Markdown Converter runs entirely in your browser. What you paste or drop is read into memory on your device, converted with JavaScript, and never sent to a server. You can disconnect from the internet and it keeps working.</p>
+      </details>
+      <details class="faq">
+        <summary>How do I convert an Excel or Google Sheets range to a Markdown table?</summary>
+        <p>Select the cells in your spreadsheet, copy them, and paste into the input box. Spreadsheets copy cells as tab separated text (and often as an HTML table too), which is detected automatically. Merged cells are repeated in every cell they cover, and line breaks inside a cell become a <code>&lt;br&gt;</code> tag.</p>
+      </details>
+      <details class="faq">
+        <summary>What happens to pipe characters and special symbols in my cells?</summary>
+        <p>A <code>|</code> inside a cell would break the table, so it is always written as <code>\|</code>. If your cells contain backslashes, asterisks, underscores or backticks that should show literally, turn on "Escape" and they get a backslash in front. Empty header cells get a "Column N" placeholder.</p>
+      </details>
+      <details class="faq">
+        <summary>Can it turn a Markdown table back into CSV?</summary>
+        <p>Yes. Switch to "Markdown → CSV", paste a Markdown table, and copy or download it as table.csv. Escaped pipes and <code>&lt;br&gt;</code> tags are turned back into plain characters and line breaks.</p>
+      </details>
+      <details class="faq">
+        <summary>Is it really free, and does it work offline?</summary>
+        <p>Yes. It is open source under the MIT license, with no account, no limits and no ads. After your first visit the page is cached by a service worker, so it loads without a connection, and you can install it from your browser's menu as an app. If it saves you a paid subscription, you can say thanks on Ko-fi.</p>
+      </details>
+      <details class="faq">
+        <summary>Was this written by AI?</summary>
+        <p>Yes. Table to Markdown Converter was generated by Claude Code from a written specification inside an automated pipeline, with a test suite that runs in a real browser. The full source is on GitHub, so you can read every line before you trust it with your data.</p>
+      </details>
+      <!-- FAQ:END -->
+    </section>
+
+    <section class="container section" id="support">
+      <div class="support-card">
+        <h2 class="section__title">Built by one person, given away for free</h2>
+        <p>Table to Markdown Converter is a free alternative to paid tools like TablesGenerator and Table Convert. If it earns a place in your bookmarks, a coffee keeps the updates coming.</p>
+        <a class="btn btn--kofi" href="https://ko-fi.com/leodavidai" rel="noopener">☕ Support Or on Ko-fi</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__links">
+        <a href="https://github.com/turhe123/table-to-markdown-local" rel="noopener">Source on GitHub</a> ·
+        <a href="https://github.com/turhe123/table-to-markdown-local/issues" rel="noopener">Report a bug</a> ·
+        <a href="https://turhe123.github.io/web-tools/" rel="noopener">More free web tools</a> ·
+        <a href="https://ko-fi.com/leodavidai" rel="noopener">Ko-fi</a>
+      </p>
+      <p class="site-footer__disclosure"><strong>Built with AI.</strong> Table to Markdown Converter was written by Claude Code inside an automated pipeline from a plain-English spec, as a clean-room implementation: no code or assets from any commercial product. It runs entirely in your browser, makes no network requests except an anonymous, cookieless page-view count, and has had less human review than hand-written software. Bug reports and pull requests are welcome.</p>
+      <p class="site-footer__copy">© 2026 Or Davidai Bachar · MIT License · <span id="sw-status" class="sw-status" aria-live="polite"></span></p>
+    </div>
+  </footer>
+
+  <script type="module" src="site.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
